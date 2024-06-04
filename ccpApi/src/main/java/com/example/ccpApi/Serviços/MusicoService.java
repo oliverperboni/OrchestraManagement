@@ -24,6 +24,9 @@ public class MusicoService {
         musicoRepo.save(musico);
     }
 
+    public void delete(Long id){
+      musicoRepo.deleteById(id);
+    }
 
     public List<Musico> getMusicosByComunId(Integer comun) {
          return musicoRepo. findByComun(comun);

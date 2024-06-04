@@ -23,13 +23,13 @@ export class MusicosService {
     return this.http.get<Musico[]>(this.apiUrl + '?comunId=' + comumId, { headers });
   }
 
-  public createMusico(musico: Musico): void {
+  public createMusico(musico: Musico): Observable<Musico>{
     const token = this.authService.getToken();
     let headers = new HttpHeaders();
 
     if (token) {
       headers = headers.set('Authorization', `Bearer ${token}`);
     }
-    this.http.post<Musico>(this.apiUrl, musico, { headers });
+    return this.http.post<Musico>(this.apiUrl, musico, { headers });
   }
 }

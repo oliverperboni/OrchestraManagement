@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'comuns', component: ComunsComponent },
   { path: 'criar-comuns', component: CriarComunsComponent},
   { path: 'musicolist/:id', component: MusicoListComponent },
+  { path: 'musicoCreate/:id', component: CriarMusicoComponent },
   { path: 'register', component: FormMusicoComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 

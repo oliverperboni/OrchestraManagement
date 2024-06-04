@@ -31,7 +31,6 @@ public class MusicoController {
         }
     }
 
-
    @GetMapping
    public List<Musico> getMusicosByComunId(@RequestParam Integer comunId) {
        Comun comun = comunService.getOneComun(comunId);
@@ -40,8 +39,12 @@ public class MusicoController {
        }else {
            return null;
        }
-
    }
-    
+
+   @DeleteMapping
+  public void deleteMusico(@RequestParam long id){
+      musicoService.delete(id);
+   }
+
 
 }

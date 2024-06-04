@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ROLES } from '../types/role';
+import { Musico } from '../types/musico';
 
 @Component({
   selector: 'app-form-musico',
@@ -16,8 +17,8 @@ export class FormMusicoComponent {
 
   constructor(private fb: FormBuilder, private authService : AuthService) {
     this.userForm = this.fb.group({
-      first_name: ['', Validators.required],
-      last_name: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
       username: ['', Validators.required],
       password: ['', Validators.required],
       role: ['USER', Validators.required]
@@ -26,7 +27,7 @@ export class FormMusicoComponent {
 
   onSubmit() {
     if (this.userForm.valid) {
-      const userData = this.userForm.value;
+      const userData : Musico = this.userForm.value;
      this.authService.register(userData)
     }
   }

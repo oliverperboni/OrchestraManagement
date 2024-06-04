@@ -1,1 +1,40 @@
-<p>criar-musico works!</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="text-center mb-4">Registrar Novo Usuário</h2>
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="nome" formControlName="nome">
+        </div>
+
+        <div class="mb-3">
+          <label for="telefone" class="form-label">Telefone</label>
+          <input type="tel" class="form-control" id="telefone" formControlName="telefone">
+        </div>
+
+        <!-- <div class="mb-3">
+          <label for="comum" class="form-label">Comum</label>
+          <input type="text" class="form-control" id="comum" formControlName="comum">
+        </div> -->
+
+        <div class="mb-3">
+          <label for="role" class="form-label">Instrumento</label>
+          <select class="form-select" id="instrumento" formControlName="instrumento">
+            <option *ngFor="let instrumento of intrumentos" [value]="instrumento">{{ instrumento }}</option>
+          </select>
+        </div>
+
+        <!-- <div class="mb-3">
+          <label for="password" class="form-label">Cargos</label>
+          <span>TODO </span>
+        </div> -->
+
+
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">Registrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

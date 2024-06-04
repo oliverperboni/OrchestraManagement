@@ -1,8 +1,8 @@
 export enum Intrumentos{
-  Violino,
-  Viola,
-  Violoncelo,
-  Trompete,
-  Trombonone,
-  Tuba
+  Violino = "Violino",
+  Viola = "Viola",
+  Violoncelo = "Violoncelo",
+  Trompete = "Trompete",
+  Trombonone = "Trombone",
+  Tuba= "Tuba"
 }

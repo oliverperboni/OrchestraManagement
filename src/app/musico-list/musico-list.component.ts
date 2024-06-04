@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MusicosService } from '../services/musicos.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Musico } from '../types/musico';
 
 @Component({
@@ -15,7 +15,7 @@ export class MusicoListComponent implements OnInit {
   musicos: Musico[] = []
 
 
-  constructor(private musicoService: MusicosService, private route: ActivatedRoute) {}
+  constructor(private musicoService: MusicosService, private route: ActivatedRoute,private router: Router) {}
 
 
   ngOnInit(): void {
@@ -27,9 +27,11 @@ export class MusicoListComponent implements OnInit {
 
     this.musicoService.getMusicos(this.id).subscribe(data => this.musicos = data)
 
-    console.log("TESTE"+this.musicos);
   }
 
+  navigateToCreateMusico(): void {
+    this.router.navigate(['/musicoCreate', this.id]);
+  }
 
 
 
