@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="text-center mb-4">Registrar Novo Usuário</h2>
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="first_name" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="first_name" formControlName="first_name">
+        </div>
+
+        <div class="mb-3">
+          <label for="last_name" class="form-label">Sobrenome</label>
+          <input type="text" class="form-control" id="last_name" formControlName="last_name">
+        </div>
+
+        <div class="mb-3">
+          <label for="username" class="form-label">Nome de Usuário</label>
+          <input type="text" class="form-control" id="username" formControlName="username">
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Senha</label>
+          <input type="password" class="form-control" id="password" formControlName="password">
+        </div>
+
+        <div class="mb-3">
+          <label for="role" class="form-label">Role</label>
+          <select class="form-select" id="role" formControlName="role">
+            <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+          </select>
+        </div>
+
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">Registrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

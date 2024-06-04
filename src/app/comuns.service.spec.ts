@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
+import { ComunsService } from './services/comuns.service';
 
-import { ComunsService } from './comuns.service';
+
 
 describe('ComunsService', () => {
   let service: ComunsService;

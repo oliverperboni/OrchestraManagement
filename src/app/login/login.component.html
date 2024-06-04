@@ -1,8 +1,4 @@
-<!-- <div>
-  <input type="text" [(ngModel)]="username" placeholder="Usuário" />
-  <input type="password" [(ngModel)]="password" placeholder="Senha" />
-  <button (click)="login()">Entrar</button>
-</div> -->
+<!--
 
 
 <section class="vh-100 gradient-custom">
@@ -48,4 +44,40 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
+
+
+<div class="container">
+  <div class="row justify-content-center align-items-center min-vh-100">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body p-5 text-center">
+          <h2 class="fw-bold mb-4">Login</h2>
+          <p class="mb-5">Por favor, insira seu nome de usuário e senha!</p>
+
+          <div class="mb-3">
+            <input type="text" [(ngModel)]="username" class="form-control" placeholder="Usuário" />
+          </div>
+
+          <div class="mb-4">
+            <input type="password" [(ngModel)]="password" class="form-control" placeholder="Senha" />
+          </div>
+
+          <p class="small mb-5"><a href="#!">Esqueceu a senha?</a></p>
+
+          <button (click)="login()" class="btn btn-primary">Entrar</button>
+
+          <div class="d-flex justify-content-center text-center mt-4">
+            <a href="#!" class="text-muted"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#!" class="text-muted"><i class="fab fa-twitter fa-lg mx-4"></i></a>
+            <a href="#!" class="text-muted"><i class="fab fa-google fa-lg"></i></a>
+          </div>
+
+          <div class="mt-4">
+            <p class="mb-0">Não tem uma conta? <a href="#!">Cadastre-se</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

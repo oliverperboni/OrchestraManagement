@@ -3,6 +3,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "CcpApiApplication",
+      "request": "launch",
+      "mainClass": "com.example.ccpApi.CcpApiApplication",
+      "projectName": "ccpApi"
+    },
+    {
       "name": "ng serve",
       "type": "chrome",
       "request": "launch",

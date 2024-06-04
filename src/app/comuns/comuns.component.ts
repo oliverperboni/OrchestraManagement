@@ -39,4 +39,7 @@ export class ComunsComponent implements OnInit {
   navigateToMusicolist(id: number): void {
     this.router.navigate(['/musicolist', id]);
   }
+  navigateRegister(): void {
+    this.router.navigate(['/register']);
+  }
 }

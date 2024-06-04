@@ -39,4 +39,16 @@ export class AuthService {
   getToken(): string | null {
     return localStorage.getItem(this.tokenKey);
   }
+
+  register(userData:any) :void{
+    this.http.post('http://localhost:8080'+"/register", userData)
+        .subscribe(
+          response => {
+            console.log('User created successfully:', response);
+          },
+          error => {
+            console.error('Error creating user:', error);
+          }
+        );
+  }
 }
