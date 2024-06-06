@@ -6,5 +6,6 @@ public enum Instrumento {
     Violoncelo,
     Trompete,
     Trombonone,
-    Tuba;
+    Tuba,
+    Null,
 }

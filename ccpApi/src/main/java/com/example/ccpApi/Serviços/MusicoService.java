@@ -31,4 +31,21 @@ public class MusicoService {
     public List<Musico> getMusicosByComunId(Integer comun) {
          return musicoRepo. findByComun(comun);
     }
+
+  public Musico updateMusico(Long id, Musico musicoDetails) {
+    Musico musico = musicoRepo.findById(id)
+      .orElseThrow(() -> new RuntimeException("Músico não encontrado com id " + id));
+
+    musico.setNome(musicoDetails.getNome());
+    musico.setInstrumento(musicoDetails.getInstrumento());
+    musico.setComum(musicoDetails.getComun());
+    musico.setCargo(musicoDetails.getCargo());
+    musico.setTelefone(musicoDetails.getTelefone());
+
+    return musicoRepo.save(musico);
+  }
+
+  public Musico getOneById(long id) {
+    return musicoRepo.findById(id).orElse(null);
+  }
 }

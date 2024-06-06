@@ -4,5 +4,6 @@ export enum Intrumentos{
   Violoncelo = "Violoncelo",
   Trompete = "Trompete",
   Trombonone = "Trombone",
-  Tuba= "Tuba"
+  Tuba= "Tuba",
+  NULL = "Null"
 }

@@ -10,6 +10,7 @@ import { CriarComunsComponent } from './criar-comuns/criar-comuns.component';
 import { MusicoListComponent } from './musico-list/musico-list.component';
 import { FormMusicoComponent } from './form-musico/form-musico.component'
 import { CriarMusicoComponent } from './criar-musico/criar-musico.component';
+import { EditarMusicoComponent } from './editar-musico/editar-musico.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'criar-comuns', component: CriarComunsComponent},
   { path: 'musicolist/:id', component: MusicoListComponent },
   { path: 'musicoCreate/:id', component: CriarMusicoComponent },
+  { path: 'editar/:id', component: EditarMusicoComponent},
   { path: 'register', component: FormMusicoComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 
@@ -34,7 +36,8 @@ const routes: Routes = [
     CriarComunsComponent,
     MusicoListComponent,
     FormMusicoComponent,
-    CriarMusicoComponent
+    CriarMusicoComponent,
+    EditarMusicoComponent
   ],
   imports: [
     FormsModule,

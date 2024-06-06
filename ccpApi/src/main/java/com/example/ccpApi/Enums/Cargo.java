@@ -4,5 +4,6 @@ public enum Cargo {
 
     ENCARREGADO,
     COOPERADOR,
+    NADA
 
 }

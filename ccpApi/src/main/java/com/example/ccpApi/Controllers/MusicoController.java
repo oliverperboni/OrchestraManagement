@@ -31,6 +31,12 @@ public class MusicoController {
         }
     }
 
+    @GetMapping("/onlyOne")
+    public Musico getOneMusic(@RequestParam long musicoId){
+      System.out.println(musicoService.getOneById(musicoId));
+     return musicoService.getOneById(musicoId);
+    }
+
    @GetMapping
    public List<Musico> getMusicosByComunId(@RequestParam Integer comunId) {
        Comun comun = comunService.getOneComun(comunId);
@@ -41,10 +47,17 @@ public class MusicoController {
        }
    }
 
+
    @DeleteMapping
   public void deleteMusico(@RequestParam long id){
       musicoService.delete(id);
    }
+
+  @PutMapping
+  public void updateMusico(@RequestParam Long id, @RequestBody Musico musicoDetails) {
+    System.out.println("-----------------------------------------"+musicoDetails.getNome());
+    Musico updatedMusico = musicoService.updateMusico(id, musicoDetails);
+  }
 
 
 }

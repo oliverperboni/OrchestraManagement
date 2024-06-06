@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Intrumentos } from '../types/instrumentos';
 import { ActivatedRoute } from '@angular/router';
 import { Musico } from '../types/musico';
+import { Cargos } from '../types/cargo';
 
 @Component({
   selector: 'app-criar-musico',
@@ -15,6 +16,7 @@ export class CriarMusicoComponent implements OnInit {
   id: number = 0;
   userForm: FormGroup;
   intrumentos = Object.values(Intrumentos);
+  cargos = Object.values(Cargos);
 
   constructor(private fb: FormBuilder, private musicosService: MusicosService, private route: ActivatedRoute) {
     this.userForm = this.fb.group({
@@ -22,7 +24,7 @@ export class CriarMusicoComponent implements OnInit {
       telefone: ['', Validators.required],
       comum: [this.id],
       instrumento: ['', Validators.required],
-      Cargo: ['ENCAREGADO'],
+      cargo: ['',Validators.required],
     });
   }
   ngOnInit(): void {

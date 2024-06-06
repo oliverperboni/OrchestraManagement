@@ -33,6 +33,13 @@ export class MusicoListComponent implements OnInit {
     this.router.navigate(['/musicoCreate', this.id]);
   }
 
+  deleteMusico(id : number) :void{
+    this.musicoService.deleteMusico(id).subscribe(data => console.log("deletei"))
+  }
+  navigateToEdit(id: number): void {
+    this.router.navigate(['/editar', id]);
+  }
+
 
 
 

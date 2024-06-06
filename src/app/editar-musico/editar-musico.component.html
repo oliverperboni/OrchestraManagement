@@ -1,36 +1,35 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <h2 class="text-center mb-4">Registrar Novo Musico</h2>
+      <h2 class="text-center mb-4">Registrar Novo Usuário</h2>
       <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
         <div class="mb-3">
           <label for="nome" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="nome" formControlName="nome">
+          <input type="text" class="form-control" id="nome" formControlName="nome" [value]="musico.nome">
         </div>
 
         <div class="mb-3">
           <label for="telefone" class="form-label">Telefone</label>
-          <input type="tel" class="form-control" id="telefone" formControlName="telefone">
+          <input type="tel" class="form-control" id="telefone" formControlName="telefone" [value]="musico.telefone">
         </div>
 
         <div class="mb-3">
           <label for="role" class="form-label">Instrumento</label>
-          <select class="form-select" id="instrumento" formControlName="instrumento">
-            <option *ngFor="let instrumento of intrumentos" [value]="instrumento">{{ instrumento }}</option>
+          <select class="form-select" id="instrumento" formControlName="instrumento" [value]="musico.instrumento">
+            <option *ngFor="let instrumento of instrumentos" [value]="instrumento">{{ instrumento }}</option>
           </select>
         </div>
 
         <div class="mb-3">
           <label for="cargo" class="form-label">Cargos</label>
-          <select class="form-select" id="cargo" formControlName="cargo">
+          <select class="form-select" id="cargo" formControlName="cargo" [value]="musico.cargo">
             <option *ngFor="let cargo of cargos" [value]="cargo">{{ cargo }}</option>
           </select>
-
         </div>
 
 
         <div class="d-grid">
-          <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">Registrar</button>
+          <button type="submit" class="btn btn-primary" >Registrar</button>
         </div>
       </form>
     </div>
