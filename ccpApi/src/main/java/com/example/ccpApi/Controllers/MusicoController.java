@@ -55,7 +55,6 @@ public class MusicoController {
 
   @PutMapping
   public void updateMusico(@RequestParam Long id, @RequestBody Musico musicoDetails) {
-    System.out.println("-----------------------------------------"+musicoDetails.getNome());
     Musico updatedMusico = musicoService.updateMusico(id, musicoDetails);
   }
 

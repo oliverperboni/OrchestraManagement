@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  angular-app:
+    build:
+      context: dist/ccpmanegement
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+
+  spring-boot-app:
+    build:
+      context: ./ccpApi
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - angular-app
+      - postgresql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgresql:5432/ccp
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: oliver
+    links:
+      - postgresql
+
+  postgresql:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: ccp
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: oliver
